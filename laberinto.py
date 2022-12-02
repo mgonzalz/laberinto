@@ -1,5 +1,5 @@
 como_debe_Ser_el_laberinto = [
-    [' ', 'X', 'X', 'X', 'X'], 
+    ['E', 'X', 'X', 'X', 'X'], 
     [' ', 'X', ' ', ' ', ' '],
     [' ', 'X', ' ', 'X', ' '], 
     [' ', ' ', ' ', 'X', ' '], 
@@ -11,11 +11,13 @@ def laberinto():
     S = (4,4) #Coordenadas de la S
     for x in range(5):
         filas=[]
-        for y in range(5):
+        for y in range(5): #Recorre las filas y columnas
             if (x,y) in muro:
-                filas.append('X')
-            elif (x,y) == S:
+                filas.append('X') #Si la coordenada está en muro, agrega una X
+            elif (x,y) == S: #Si la coordenada es igual a S, agrega una S
                 filas.append('S')
+            elif (x,y) == (0,0): #Si la coordenada es igual a (0,0), agrega una E
+                filas.append('E')
             else:
                 filas.append(' ')
         print(filas)
