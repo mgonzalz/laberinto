@@ -5,7 +5,7 @@ def laberinto(xy, muro): #Función que crea el laberinto(dimensión, muro)
     S = (4,4) #Coordenadas de la S
     for x in range(5):
         filas=[]
-        for y in range(xy): #Recorre las filas y columnas
+        for y in range(xy): #Recorre las filas
             if (x,y) in muro:
                 filas.append('X') #Si la coordenada está en muro, agrega una X
             elif (x,y) == S: #Si la coordenada es igual a S, agrega una S
@@ -19,4 +19,5 @@ def laberinto(xy, muro): #Función que crea el laberinto(dimensión, muro)
 
 #Función que muestra el laberinto
 def laberinto_impreso():
-    laberinto(5, muro)
+    laberinto_deseado = laberinto(5, muro)
+    print(laberinto_deseado)
