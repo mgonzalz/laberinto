@@ -1,17 +1,11 @@
-como_debe_Ser_el_laberinto = [
-    ['E', 'X', 'X', 'X', 'X'], 
-    [' ', 'X', ' ', ' ', ' '],
-    [' ', 'X', ' ', 'X', ' '], 
-    [' ', ' ', ' ', 'X', ' '], 
-    ['X', 'X', 'X', 'X', 'S']
-    ]
-laberinto= []
-def laberinto():
-    muro = ((0,1), (0,2), (0,3), (0,4), (1,1), (2,1), (2,3), (3,3), (4,0), (4,1), (4,2), (4,3)) #Coordenadas de las X
+from datos import laberinto
+from datos import muro
+#Laberinto
+def laberinto(xy, muro): #Función que crea el laberinto(dimensión, muro)
     S = (4,4) #Coordenadas de la S
     for x in range(5):
         filas=[]
-        for y in range(5): #Recorre las filas y columnas
+        for y in range(xy): #Recorre las filas y columnas
             if (x,y) in muro:
                 filas.append('X') #Si la coordenada está en muro, agrega una X
             elif (x,y) == S: #Si la coordenada es igual a S, agrega una S
@@ -22,5 +16,7 @@ def laberinto():
                 filas.append(' ')
         print(filas)
 
-if __name__ == '__main__':
-    laberinto()
+
+#Función que muestra el laberinto
+def laberinto_impreso():
+    laberinto(5, muro)
